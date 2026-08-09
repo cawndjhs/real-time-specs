@@ -326,7 +326,7 @@ function AjusteSlider({
         min={min}
         max={max}
         step={1}
-        onValueChange={([v]) => onChange(v)}
+        onValueChange={(vals) => onChange(vals[0] ?? value)}
         aria-label={label}
       />
     </div>
