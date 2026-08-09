@@ -48,7 +48,7 @@ const passos = [
   },
 ];
 
-export default function Home() {
+function Home() {
   const destaques = frames.slice(0, 3);
 
   return (
