@@ -338,15 +338,7 @@ export function ARTryOn({
               </span>
             )}
 
-            <Button
-              variant="secondary"
-              size="icon"
-              onClick={() => onOpenChange(false)}
-              aria-label="Fechar provador"
-              className="absolute right-4 top-4 rounded-full"
-            >
-              <X className="size-4" aria-hidden />
-            </Button>
+
           </div>
 
           <aside className="flex min-h-0 flex-col gap-4 overflow-y-auto border-t border-border p-5 lg:border-l lg:border-t-0">
