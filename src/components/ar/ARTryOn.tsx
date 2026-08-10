@@ -72,8 +72,6 @@ export function ARTryOn({
     setMarcarCO(finalidade === "grau");
   }, [finalidade]);
 
-
-
   const [medidas, setMedidas] = useState<MedidasAR>({
     dpBinocular: "",
     dpDireita: "",
