@@ -285,7 +285,6 @@ export function ARTryOn({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
-        showCloseButton={false}
         className="h-[100dvh] max-h-[100dvh] w-screen max-w-none gap-0 overflow-y-auto rounded-none border-0 bg-background p-0 sm:max-w-none"
       >
         <DialogTitle className="sr-only">
