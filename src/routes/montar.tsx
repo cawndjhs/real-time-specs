@@ -3,7 +3,8 @@ import { ArrowLeft, Camera, Check, Glasses, Sun } from "lucide-react";
 import { useMemo, useState } from "react";
 import { toast } from "sonner";
 
-import { VirtualTryOn, medidasVazias, type Medidas } from "@/components/VirtualTryOn";
+import { ARTryOn } from "@/components/ar/ARTryOn";
+import { medidasVazias, type Medidas } from "@/components/VirtualTryOn";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
