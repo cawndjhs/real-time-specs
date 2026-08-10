@@ -3,7 +3,8 @@ import { ArrowLeft, Camera, Check, Glasses, Sun } from "lucide-react";
 import { useMemo, useState } from "react";
 import { toast } from "sonner";
 
-import { VirtualTryOn, medidasVazias, type Medidas } from "@/components/VirtualTryOn";
+import { ARTryOn } from "@/components/ar/ARTryOn";
+import { medidasVazias, type Medidas } from "@/components/VirtualTryOn";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -331,11 +332,20 @@ function Montar() {
                 </p>
               ) : (
                 <dl className="mt-3 grid gap-3 text-sm sm:grid-cols-2">
-                  <Linha rotulo="Categoria" valor={visao === "simples" ? "Visão simples" : "Multifocal"} />
-                  <Linha rotulo="Marca / modelo" valor={lente ? `${lente.marca} — ${lente.nome}` : "—"} />
+                  <Linha
+                    rotulo="Categoria"
+                    valor={visao === "simples" ? "Visão simples" : "Multifocal"}
+                  />
+                  <Linha
+                    rotulo="Marca / modelo"
+                    valor={lente ? `${lente.marca} — ${lente.nome}` : "—"}
+                  />
                   <Linha rotulo="Tratamentos" valor={lente?.tratamentos.join(", ") ?? "—"} />
                   <Linha rotulo="Valor da lente" valor={lente ? brl(lente.preco) : "—"} />
-                  <Linha rotulo="DP binocular" valor={medidas.dpBinocular ? `${medidas.dpBinocular} mm` : "a confirmar"} />
+                  <Linha
+                    rotulo="DP binocular"
+                    valor={medidas.dpBinocular ? `${medidas.dpBinocular} mm` : "a confirmar"}
+                  />
                   <Linha
                     rotulo="DP OD / OE"
                     valor={
@@ -380,21 +390,24 @@ function Montar() {
         </div>
       )}
 
-      <VirtualTryOn
+      <ARTryOn
         open={provaAberta}
         onOpenChange={setProvaAberta}
         frame={frame}
         finalidade={finalidade ?? "solar"}
-        medidas={medidas}
         onMedidasChange={setMedidas}
+        onConfirmar={(m) => {
+          setMedidas(m);
+          if (frame) setEtapa(finalidade === "solar" ? 4 : 3);
+        }}
       />
-      <VirtualTryOn
+      <ARTryOn
         open={provaFinal}
         onOpenChange={setProvaFinal}
         frame={frame}
         finalidade={finalidade ?? "solar"}
         lente={lente}
-        modo="final"
+        onConfirmar={() => setProvaFinal(false)}
       />
     </div>
   );
