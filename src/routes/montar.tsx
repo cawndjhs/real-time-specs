@@ -380,22 +380,26 @@ function Montar() {
         </div>
       )}
 
-      <VirtualTryOn
+      <ARTryOn
         open={provaAberta}
         onOpenChange={setProvaAberta}
         frame={frame}
         finalidade={finalidade ?? "solar"}
-        medidas={medidas}
         onMedidasChange={setMedidas}
+        onConfirmar={(m) => {
+          setMedidas(m);
+          if (frame) setEtapa(finalidade === "solar" ? 4 : 3);
+        }}
       />
-      <VirtualTryOn
+      <ARTryOn
         open={provaFinal}
         onOpenChange={setProvaFinal}
         frame={frame}
         finalidade={finalidade ?? "solar"}
         lente={lente}
-        modo="final"
+        onConfirmar={() => setProvaFinal(false)}
       />
+
     </div>
   );
 }
