@@ -1,12 +1,4 @@
-import {
-  ArrowRight,
-  Camera,
-  Download,
-  Loader2,
-  RotateCcw,
-  Ruler,
-  ScanFace,
-} from "lucide-react";
+import { ArrowRight, Camera, Download, Loader2, RotateCcw, Ruler, ScanFace } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import { Badge } from "@/components/ui/badge";
@@ -283,9 +275,7 @@ export function ARTryOn({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent
-        className="h-[100dvh] max-h-[100dvh] w-screen max-w-none gap-0 overflow-y-auto rounded-none border-0 bg-background p-0 sm:max-w-none"
-      >
+      <DialogContent className="h-[100dvh] max-h-[100dvh] w-screen max-w-none gap-0 overflow-y-auto rounded-none border-0 bg-background p-0 sm:max-w-none">
         <DialogTitle className="sr-only">
           Provador virtual em realidade aumentada{frame ? ` — ${frame.nome}` : ""}
         </DialogTitle>
@@ -336,8 +326,6 @@ export function ARTryOn({
                 {rostoDetectado ? "Rosto detectado" : "Centralize seu rosto"}
               </span>
             )}
-
-
           </div>
 
           <aside className="flex min-h-0 flex-col gap-4 overflow-y-auto border-t border-border p-5 lg:border-l lg:border-t-0">

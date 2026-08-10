@@ -332,11 +332,20 @@ function Montar() {
                 </p>
               ) : (
                 <dl className="mt-3 grid gap-3 text-sm sm:grid-cols-2">
-                  <Linha rotulo="Categoria" valor={visao === "simples" ? "Visão simples" : "Multifocal"} />
-                  <Linha rotulo="Marca / modelo" valor={lente ? `${lente.marca} — ${lente.nome}` : "—"} />
+                  <Linha
+                    rotulo="Categoria"
+                    valor={visao === "simples" ? "Visão simples" : "Multifocal"}
+                  />
+                  <Linha
+                    rotulo="Marca / modelo"
+                    valor={lente ? `${lente.marca} — ${lente.nome}` : "—"}
+                  />
                   <Linha rotulo="Tratamentos" valor={lente?.tratamentos.join(", ") ?? "—"} />
                   <Linha rotulo="Valor da lente" valor={lente ? brl(lente.preco) : "—"} />
-                  <Linha rotulo="DP binocular" valor={medidas.dpBinocular ? `${medidas.dpBinocular} mm` : "a confirmar"} />
+                  <Linha
+                    rotulo="DP binocular"
+                    valor={medidas.dpBinocular ? `${medidas.dpBinocular} mm` : "a confirmar"}
+                  />
                   <Linha
                     rotulo="DP OD / OE"
                     valor={
@@ -400,7 +409,6 @@ function Montar() {
         lente={lente}
         onConfirmar={() => setProvaFinal(false)}
       />
-
     </div>
   );
 }
