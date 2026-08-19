@@ -38,7 +38,7 @@ export const frames: Frame[] = [
     cor: "Dourado",
     formato: "Aviador",
     imagem: frameAviador,
-    finalidades: ["grau", "solar"],
+    finalidades: ["solar"],
     material: "Metal leve",
   }
 ];
