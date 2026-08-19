@@ -129,7 +129,9 @@ export function VirtualTryOn({
                   ref={videoRef}
                   playsInline
                   muted
-                  className="size-full scale-x-[-1] object-cover"
+                  className={`pointer-events-none absolute -translate-x-1/2 -translate-y-1/2 object-contain ${
+  camAtiva ? "scale-x-[-1]" : ""
+}`}
                 />
               ) : (
                 <img
@@ -142,9 +144,10 @@ export function VirtualTryOn({
 
               {frame && (
                 <img
+                  key={frame.id}
                   src={frame.imagem}
-                  alt=""
-                  className="pointer-events-none absolute -translate-x-1/2 -translate-y-1/2"
+                  alt={frame.nome}
+                  className="pointer-events-none absolute object-contain"
                   style={{
                     width: `${largura}%`,
                     left: `${horizontal}%`,

@@ -1,9 +1,5 @@
 import frameQuadrada from "@/assets/frame-quadrada-preta.png";
 import frameAviador from "@/assets/frame-aviador-dourada.png";
-import frameRedonda from "@/assets/frame-redonda-tartaruga.png";
-import frameGatinho from "@/assets/frame-gatinho-rose.png";
-import frameSolarPreta from "@/assets/frame-solar-preta.png";
-import frameSolarEspelhada from "@/assets/frame-solar-espelhada.png";
 
 export type Finalidade = "solar" | "grau";
 
@@ -23,76 +19,28 @@ export type Frame = {
 export const frames: Frame[] = [
   {
     id: "quadrada-preta",
-    nome: "Vector Square",
-    marca: "Lumen",
-    preco: 289,
+    nome: "Ray-ban - JUSTIN CLASSIC",
+    marca: "Ray-ban",
+    preco: 890,
     estilo: "Moderno",
     cor: "Preto",
     formato: "Quadrado",
     imagem: frameQuadrada,
     finalidades: ["grau", "solar"],
-    material: "Acetato fosco",
+    material: "Nylon",
   },
   {
     id: "aviador-dourada",
-    nome: "Pilot Gold",
-    marca: "Lumen",
-    preco: 359,
+    nome: "Ray-ban - AVIATOR GRADIENT",
+    marca: "Ray-ban",
+    preco: 1050,
     estilo: "Clássico",
     cor: "Dourado",
     formato: "Aviador",
     imagem: frameAviador,
     finalidades: ["grau", "solar"],
     material: "Metal leve",
-  },
-  {
-    id: "redonda-tartaruga",
-    nome: "Rond Tartaruga",
-    marca: "Vista Nova",
-    preco: 269,
-    estilo: "Clássico",
-    cor: "Tartaruga",
-    formato: "Redondo",
-    imagem: frameRedonda,
-    finalidades: ["grau"],
-    material: "Acetato animal print",
-  },
-  {
-    id: "gatinho-rose",
-    nome: "Cat Rosé",
-    marca: "Vista Nova",
-    preco: 299,
-    estilo: "Fashion",
-    cor: "Rosé",
-    formato: "Gatinho",
-    imagem: frameGatinho,
-    finalidades: ["grau"],
-    material: "Acetato translúcido",
-  },
-  {
-    id: "solar-preta",
-    nome: "Sunset Black",
-    marca: "Lumen Sun",
-    preco: 249,
-    estilo: "Clássico",
-    cor: "Preto",
-    formato: "Quadrado",
-    imagem: frameSolarPreta,
-    finalidades: ["solar"],
-    material: "Acetato polarizado",
-  },
-  {
-    id: "solar-espelhada",
-    nome: "Hexa Mirror",
-    marca: "Lumen Sun",
-    preco: 329,
-    estilo: "Esportivo",
-    cor: "Prata",
-    formato: "Hexagonal",
-    imagem: frameSolarEspelhada,
-    finalidades: ["solar"],
-    material: "Metal + lente espelhada",
-  },
+  }
 ];
 
 export const estilos = ["Clássico", "Moderno", "Fashion", "Esportivo"] as const;
